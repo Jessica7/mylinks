@@ -5,7 +5,11 @@
   "main": "frontend/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development babel-node server.js",
-    "build": ""
+    "build": "",
+    "jest": "node_modules/.bin/jest",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "author": "Jéssica Oliveira",
   "engines": {
@@ -18,8 +22,9 @@
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
+    "react-test-renderer": "^15.5.4",
     "react-router-redux": "next",
-    "redux": "^3.6.0",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -38,6 +43,10 @@
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
+    "classnames": "^2.2.5",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "jest": "^21.2.1",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^2.1.0-beta.11",
