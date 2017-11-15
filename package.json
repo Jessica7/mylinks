@@ -17,14 +17,17 @@
   },
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "react-test-renderer": "^15.5.4",
     "react-router-redux": "next",
-    "redux": "^3.6.0"
+    "react-select": "^1.0.0-rc.10",
+    "react-test-renderer": "^15.5.4",
+    "redux": "^3.6.0",
+    "redux-form": "^7.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
