@@ -1,0 +1,25 @@
+.search-form
+  width: 24rem
+  position: relative
+  background: tomato
+
+.input-search
+  padding: 1rem
+  width: 95%
+  height: 3rem
+  border: none
+  border-bottom: solid 1px $color-fourth
+  color: $color-secondary
+
+  @include placeholder()
+    color: $color-placeholder
+
+  &:focus
+    outline: none
+    border-bottom: solid 1px $color-primary
+
+.icon-search
+  position: absolute
+  top: 2.6rem
+  left: 22rem
+  color: $search-icon
