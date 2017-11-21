@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as linkActions from 'actions/link';
+import Home from '../Home';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class App extends React.Component {
       <div id="app">
         <main className="wrapper">
           <Switch>
-            <Route exact path='/' />
+            <Route exact path='/' component={Home} />
           </Switch>
         </main>
       </div>
