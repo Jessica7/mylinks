@@ -14,12 +14,13 @@ const tags = [
 ];
 
 let LinkForm = ({ options, handleSubmit, onSubmit }) => (
-  <form onSubmit={handleSubmit(onSubmit)}>
+  <form className="form-link" onSubmit={handleSubmit(onSubmit)}>
     <Field
       type="text"
       name="title"
       label="Title"
       component={Input}
+      className="form-input"
       placeholder="title"
       data-required />
     <Field
@@ -27,12 +28,15 @@ let LinkForm = ({ options, handleSubmit, onSubmit }) => (
       name="url"
       label="Url"
       component={Input}
+      className="form-input"
       placeholder="url" />
     <Field
       type="select"
       name="tags"
       component={Select}
       options={options}
+      multi={true}
+      className="form-input"
       placeholder="tags" />
     <Button
       type={'submit'}

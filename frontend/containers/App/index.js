@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as linkActions from 'actions/link';
 import Home from '../Home';
+import Form from '../Form';
 import Sidebar from '../../components/Sidebar';
 
 class App extends React.Component {
@@ -17,6 +18,7 @@ class App extends React.Component {
         <main className="wrapper">
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route path='/cadastrar' component={Form} />
           </Switch>
         </main>
       </div>
