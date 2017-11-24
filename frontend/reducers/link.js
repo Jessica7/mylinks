@@ -30,6 +30,16 @@ function deleteLink(state, action) {
   };
 }
 
+function addLink(state, action) {
+  const items = state.items;
+  items.push(action.item);
+  return {
+    ...state,
+    items
+  };
+}
+
 export default createReducer(initialState, {
   [ACTIONS.DELETE_LINK]: deleteLink,
+  [ACTIONS.ADD_LINK]: addLink,
 });

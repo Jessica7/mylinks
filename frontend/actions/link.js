@@ -6,3 +6,10 @@ export function deleteLink(id) {
     id
   };
 }
+
+export function addItem(item) {
+  return {
+    type: actions.ADD_LINK,
+    item
+  };
+}
