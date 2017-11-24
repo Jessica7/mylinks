@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactSelect from 'react-select';
 
-const Select = ({ input, onBlur, options, meta: { error, touched } }) => {
+const Select = ({ multi, input, onBlur, options, meta: { error, touched } }) => {
   return (
-    <div>
+    <div className="wrapper-select">
       <ReactSelect
-        multi={true}
+        multi={multi}
         {...input}
         value={input.value || []}
         options={options}
-        onBlur={() => input.onBlur([...input.value])}
-      />
+        onBlur={() => input.onBlur([...input.value])} />
       {touched && error}
     </div>
   )
