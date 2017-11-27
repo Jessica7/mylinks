@@ -1,25 +1,16 @@
 import React from 'react';
-import { Switch, Route } from 'react-router';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as linkActions from 'actions/link';
-import Home from '../Home';
-import Form from '../Form';
-import Sidebar from '../../components/Sidebar';
+import { withRouter } from 'react-router-dom';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor(props, context) {
+    super(props, context);
   }
   render() {
     return (
       <div id="app">
-        <Sidebar />
         <main className="wrapper">
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/cadastrar' component={Form} />
-          </Switch>
+          {this.props.children}
         </main>
       </div>
     );
@@ -27,16 +18,18 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    auth: state.auth
+  };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    linkAction: bindActionCreators(linkActions, dispatch)
+    dispatch
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(App));

@@ -1,7 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import * as linkActions from 'actions/link';
+import * as authActions from 'actions/auth';
 import List from '../../components/List';
 import DefaultView from '../../components/DefaultView';
 
@@ -10,15 +12,23 @@ class Home extends React.Component {
     super(props);
 
     this.deleteItem = this.deleteItem.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   deleteItem(id) {
     this.props.linkAction.deleteLink(id);
   }
 
+  logout() {
+    localStorage.removeItem('mylinks');
+    this.props.authAction.logoutUser();
+    this.props.history.push('/');
+  }
+
   render () {
     return (
       <div className="home">
+        <Link to="" onClick={this.logout}>Logout</Link>
         {this.props.link.items.length > 0
           ? <List items={this.props.link.items} onClick={this.deleteItem} />
           : <div className="container-defaultView">
@@ -30,15 +40,17 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = ({ link }) => {
+const mapStateToProps = ({ link, auth }) => {
   return {
-    link
+    link,
+    auth
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    linkAction: bindActionCreators(linkActions, dispatch)
+    linkAction: bindActionCreators(linkActions, dispatch),
+    authAction: bindActionCreators(authActions, dispatch)
   };
 };
 
