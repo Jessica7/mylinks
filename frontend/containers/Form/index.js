@@ -37,7 +37,7 @@ const mapStateToProps = ({ link }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    linkAction: bindActionCreators(linkActions, dispatch),
+    linkAction: bindActionCreators(linkActions, dispatch)
   };
 };
 

@@ -5130,7 +5130,7 @@ react-router-redux@next:
     prop-types "^15.6.0"
     react-router "^4.2.0"
 
-react-router@^4.1.1, react-router@^4.2.0:
+react-router@4.2.0, react-router@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
   dependencies:
@@ -5251,6 +5251,10 @@ redux-form@^7.1.2:
     lodash "^4.17.3"
     lodash-es "^4.17.3"
     prop-types "^15.5.9"
+
+redux-thunk@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
 redux@^3.6.0:
   version "3.7.2"
