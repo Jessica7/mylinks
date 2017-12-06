@@ -19,7 +19,7 @@ function authSuccess(state, action) {
   return {
     ...state,
     name: action.auth.name,
-    isLogged: action.auth.isLogged,
+    isLogged: true,
     token: action.auth.token
   };
 }
