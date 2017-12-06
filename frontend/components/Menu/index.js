@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <ul className="sidebar-menu">
       <li>
-        <Link className="menu-link" to="/">
+        <Link className="menu-link" to="/home">
           <Icon type={'fa fa-home'} size={'small'} color={'white'} />
           <span className="title">{'Home'}</span>
         </Link>

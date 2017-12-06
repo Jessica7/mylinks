@@ -8,7 +8,7 @@ const image = require('../../assets/images/profile-image.jpg');
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <Link to="/" className="logo">
+      <Link to="/home" className="logo">
         <h1>MyLinks</h1>
       </Link>
       <ProfilePicture image={image} name={'John'} />

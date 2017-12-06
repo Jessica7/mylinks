@@ -5,17 +5,18 @@ import Home from './containers/Home';
 import Form from './containers/Form';
 import App from './containers/App';
 import UserLogin from './containers/UserLogin';
-import Sidebar from './components/Sidebar';
 
-const Routes = ({ history, store }) => {
+export const Routes = ({ history, store }) => {
   return (
     <Router history={history}>
-      <App>
+      <div>
         <Route exact path='/' component={UserLogin} />
-        <Route exact path='/login' component={UserLogin} />
-        <PrivateRoute history={history} path='/home' store={store} component={Home} />
-        <PrivateRoute history={history} path='/cadastrar' store={store} component={Form} />
-      </App>
+        <Route path='/login' component={UserLogin} />
+        <App>
+          <PrivateRoute history={history} path='/home' store={store} component={Home} />
+          <PrivateRoute history={history} path='/cadastrar' store={store} component={Form} />
+        </App>
+      </div>
     </Router>
   );
 };

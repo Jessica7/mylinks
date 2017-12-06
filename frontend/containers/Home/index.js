@@ -27,14 +27,16 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div className="home">
-        <Link to="" onClick={this.logout}>Logout</Link>
-        {this.props.link.items.length > 0
-          ? <List items={this.props.link.items} onClick={this.deleteItem} />
-          : <div className="container-defaultView">
-              <DefaultView text="Not found" color="grey" size="small" />
-            </div>
-        }
+      <div>
+        <div className="content-list">
+          <Link to="" onClick={this.logout}>Logout</Link>
+          {this.props.link.items.length > 0
+            ? <List items={this.props.link.items} onClick={this.deleteItem} />
+            : <div className="container-defaultView">
+                <DefaultView text="Not found" color="grey" size="small" />
+              </div>
+          }
+        </div>
       </div>
     );
   }
