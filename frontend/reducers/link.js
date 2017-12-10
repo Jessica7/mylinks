@@ -6,16 +6,23 @@ import uuidv4 from 'uuid/v4';
 function findIndexById(items, action) {
   return _.findIndex(items, (item) => item.id == action.id);
 }
-
-const fakeItem = {
-  id: uuidv4(),
-  title: "McDonald’s Sheds Stores",
-  url: "http://nyti.ms/2ldCq6V",
-  tags: ['Business']
-};
+function generateItems(limit) {
+  let items = [];
+  for (let i = 0; i <= limit; i++) {
+    const fakeItem = {
+      id: uuidv4(),
+      title: `title ${i}`,
+      url: "http://nyti.ms/2ldCq6V",
+      tags: [`Business ${i}`]
+    };
+    items.push(fakeItem);
+  }
+ 
+  return items;
+}
 
 const initialState = {
-  items: [fakeItem],
+  items: generateItems(14),
   item: null,
   tags: []
 };

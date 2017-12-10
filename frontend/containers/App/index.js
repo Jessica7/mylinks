@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props, context);
   }
   render() {
-    const { isLogged } = this.props.auth;
+    const isLogged = localStorage.getItem('mylinks');
     return (
       <div id="app">
         { isLogged ? <Sidebar /> : null }
