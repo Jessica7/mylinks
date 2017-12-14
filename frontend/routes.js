@@ -22,9 +22,7 @@ export const Routes = ({ history, store }) => {
 };
 
 function PrivateRoute({ component, history, store, ...rest }) {
-  const isAuthenticated = store.getState().auth.token
-                          && localStorage.getItem('mylinks');
-
+  const isAuthenticated = localStorage.getItem('mylinks');
   return (
     <Route {...rest} render={props => {
       if (!isAuthenticated) {
