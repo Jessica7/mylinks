@@ -8,7 +8,7 @@ import List from '../../components/List';
 import DefaultView from '../../components/DefaultView';
 import ReactPaginate from 'react-paginate';
 
-const LIST_PERPAGE = 5;
+const LIST_PERPAGE = 8;
 
 class Home extends React.Component {
   constructor(props, context) {
@@ -18,7 +18,6 @@ class Home extends React.Component {
       pageCount: Math.ceil(props.link.items.length / LIST_PERPAGE)
     }
     this.deleteItem = this.deleteItem.bind(this);
-    this.logout = this.logout.bind(this);
     this.loadData = this.loadData.bind(this);
   }
 
@@ -37,20 +36,10 @@ class Home extends React.Component {
     this.props.linkAction.deleteLink(id);
   }
 
-  logout() {
-    localStorage.removeItem('mylinks');
-    this.props.authAction.logoutUser();
-    this.props.history.push('/');
-  }
-
   render () {
-    const listItems = () => {
-      return 
-    }
     return (
       <div className="container-list">
         <div className="content-list">
-          <Link to="/" onClick={this.logout}>Logout</Link>
           {this.props.link.items.length > 0
             ? (
               <div>
