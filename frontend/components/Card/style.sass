@@ -15,15 +15,16 @@
 .card-list
   display: inline-flex
   position: relative
+  padding: 1rem
   margin-bottom: 1rem
-  width: 100%
-  height: 10rem
+  width: 24rem
+  height: 22rem
   text-align: center
   font-family: 'Catamaran Regular', sans-serif
   color: $color-secondary
   background: $color-third
-  border-radius: .375rem
-  box-shadow: .3rem .3rem .3rem $shadow
+  border-radius: 1rem
+  box-shadow: 0rem 0.3rem 1.2rem #dddddd
 
   > .category
     width: 8rem
@@ -33,7 +34,10 @@
   > .content
     width: 30rem
     height: 100%
-    padding: 0rem 1.4rem
+
+    > .icon
+        margin-top: 2rem
+        text-align: center
 
     > .description
         width: 100%
@@ -46,7 +50,8 @@
             display: block
             padding-top: 1rem
             margin-left: 1rem
-            font-size: 1.4rem
+            font-size: 1.6rem
+            font-weight: bold
             word-break: break-all
             color: $color-secondary
 
@@ -58,10 +63,11 @@
     > .actions
         display: flex
         flex-direction: row
-        margin-top: 1rem
         position: relative
         width: 100%
         height: 4rem
+        margin-top: 4.4rem
+        border: solid 0px red
 
         > .favor
             @extend %favor-share

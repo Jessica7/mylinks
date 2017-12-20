@@ -11,12 +11,6 @@ const Menu = () => {
           <span className="title">{'Home'}</span>
         </Link>
       </li>
-      <li>
-        <Link className="menu-link" to="/cadastrar">
-          <Icon type={'fa fa-link'} size={'small'} color={'white'} />
-          <span className="title">{'Add Link'}</span>
-        </Link>
-      </li>
     </ul>
   );
 };

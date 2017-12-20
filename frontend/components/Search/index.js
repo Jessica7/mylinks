@@ -5,18 +5,15 @@ import Input from '../Input';
 import Icon from '../Icon';
 
 let Search = ({ handleSubmit, onChange }) => (
-  <form onChange={handleSubmit(onChange)}>
-    <span className="icon-search">
-      <Icon type={'fa fa-search'}
-            size={'small'}
-            color={'light-grey'} />
-    </span>
-    <Field
-      type="text"
-      name="search"
-      component={Input}
-      className="input-search"
-      placeholder="search" />
+  <form className="search-form" onChange={handleSubmit(onChange)}>
+    <div className="wrapper-search">
+      <Field
+        type="text"
+        name="search"
+        component={Input}
+        className="input-search"
+        placeholder="search" />
+      </div>
   </form>
 );
 

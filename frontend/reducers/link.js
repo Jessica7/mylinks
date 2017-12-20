@@ -11,7 +11,7 @@ function generateItems(limit) {
   for (let i = 0; i <= limit; i++) {
     const fakeItem = {
       id: uuidv4(),
-      title: `title ${i}`,
+      title: `McDonald’s Sheds Stores ${i}`,
       url: "http://nyti.ms/2ldCq6V",
       tags: [`Business ${i}`]
     };

@@ -31,7 +31,7 @@ class FilterByTag extends React.PureComponent {
             );
           })
         }
-        <a href="javascript:void(0)" className="clear" onClick={this.props.clearFilter}>{'clear'}</a>
+        <a href="javascript:void(0)" className="clear" onClick={this.props.clearFilter}>{'x'}</a>
       </div>
     );
   }

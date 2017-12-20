@@ -1,25 +1,30 @@
-.search-form
-  width: 24rem
+.wrapper-search
   position: relative
-  background: tomato
+  display: flex
+  width: 36rem
 
+  > .icon
+      position: absolute
+      top: 1.8rem
+      right: 1rem
+      transition: right 1s
+  
 .input-search
-  padding: 1rem
-  width: 95%
-  height: 3rem
+  padding: 1.2rem 2rem 1.2rem 4rem 
+  width: 36rem
   border: none
-  border-bottom: solid 1px $color-fourth
+  border: solid 1px $color-fourth
+  border-radius: 4rem
   color: $color-secondary
-
-  @include placeholder()
-    color: $color-placeholder
+  background-image: url('../assets/images/icon-search.png')
+  background-position: .6rem .5rem
+  background-repeat: no-repeat
+  -webkit-transition: width 0.4s
+  -moz-transition: width 0.4s
+  -o-transition: width 0.4s
+  transition: width 0.4s
 
   &:focus
     outline: none
-    border-bottom: solid 1px $color-primary
-
-.icon-search
-  position: absolute
-  top: 3.4rem
-  left: 22rem
-  color: $search-icon
+    width: 44rem
+    border: solid 1px $color-primary
