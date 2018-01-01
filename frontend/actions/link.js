@@ -13,3 +13,31 @@ export function addItem(item) {
     item
   };
 }
+
+export function concatFilter(filter) {
+  return {
+    type: actions.CONCAT_FILTER,
+    filter
+  };
+}
+
+export function filteringByTag(tag) {
+  return {
+    type: actions.FILTER_BY_TAG,
+    tag
+  };
+}
+
+export function clearFilter() {
+  return {
+    type: actions.RESET_FILTERS,
+  };
+}
+
+
+export function filteringBySearch(term) {
+  return {
+    type: actions.FILTER_BY_SEARCH,
+    term
+  };
+}

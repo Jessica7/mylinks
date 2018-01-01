@@ -8,7 +8,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
-  } 
+  }
 
   logout() {
     localStorage.removeItem('mylinks');
@@ -20,11 +20,11 @@ class Header extends React.Component {
     return (
       <header className="ml-header">
         <div className="search">
-          <Search onChange={() => {}} />
+          <Search onChange={_.debounce(this.props.searchItem, 1000)} />
         </div>
         <div className="filter">
-          <FilterByTag selectTag={this.props.selectTag} 
-                       clearFilter={this.props.clearFilter} />  
+          <FilterByTag selectTag={this.props.selectTag}
+                       clearFilter={this.props.clearFilter} />
         </div>
         <Link to="/cadastrar" className="circle-link">
           <span className="icon-plus">+</span>
@@ -44,7 +44,7 @@ class Header extends React.Component {
           </div>
         </div>
       </header>
-    );  
+    );
   }
 };
 
