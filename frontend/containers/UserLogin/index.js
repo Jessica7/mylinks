@@ -14,6 +14,13 @@ class UserLogin extends React.Component {
     this.makeLogin = this.makeLogin.bind(this);
   }
 
+  // @TODO: It needs to improve this solution
+  componentWillMount() {
+    if (localStorage.getItem('mylinks')) {
+      this.props.history.push('/home');
+    }
+  }
+
   makeLogin(value) {
     const { authAction } = this.props;
     const data = {
