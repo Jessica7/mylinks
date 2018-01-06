@@ -37,7 +37,9 @@ class App extends React.Component {
         <div className="ml-container">
           { isLogged
             ? <Header selectTag={this.selectTag}
+                      checkedTags={this.props.link.tags}
                       clearFilter={this.clearFilter}
+                      clearFilterByOne={this.props.linkAction.clearFilterByOne}
                       searchItem={this.searchItem} /> : null }
           <main>
             {this.props.children}

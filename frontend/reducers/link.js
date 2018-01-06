@@ -64,7 +64,6 @@ function filterTag(state, action) {
   let tags = state.tags;
   if (!tags.includes(action.tag))
     tags.push(action.tag);
-
   return {
     ...state,
     tags
@@ -76,6 +75,18 @@ function filterClear(state, action) {
     ...state,
     filters: state.filters.filter(filter => filter != 'byTags'),
     tags: []
+  };
+}
+
+function filterClearByOne(state, action) {
+  const index = _.findIndex(f => state.tags.includes(action.keyword));
+  state.tags.splice(index, 1);
+  const filters = state.tags.length == 0
+    ? state.filters.filter(filter => filter != 'byTags') : state.filters;
+  return {
+    ...state,
+    filters,
+    tags: state.tags
   };
 }
 
@@ -91,6 +102,7 @@ export default createReducer(initialState, {
   [ACTIONS.ADD_LINK]: addLink,
   [ACTIONS.FILTER_BY_TAG]: filterTag,
   [ACTIONS.RESET_FILTERS]: filterClear,
+  [ACTIONS.RESET_ONE_FILTER]: filterClearByOne,
   [ACTIONS.FILTER_BY_SEARCH]: filterBySearch,
   [ACTIONS.CONCAT_FILTER]: concatFilter,
 });

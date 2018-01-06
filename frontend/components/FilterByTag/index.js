@@ -1,19 +1,34 @@
 import React from 'react';
+import { log } from 'util';
 
 class FilterByTag extends React.PureComponent {
   constructor(props) {
-    super(props);
-
+    super(props); 
     this.state = {
-      tags : ['business', 'sport', 'style', 'cusin']
+      tags : ['business', 'sport', 'style', 'cusin'],
     };
 
     this.getTag = this.getTag.bind(this);
+    this.applyTagStyle = this.applyTagStyle.bind(this);
   }
 
-  getTag (e) {
-    const tag = e.target.dataset.tag;
-    this.props.selectTag(tag);
+  getTag (event) {
+    const tag = event.target.dataset.tag;
+    if (this.props.checkedTags.includes(tag)) {
+      this.props.clearFilterByOne(tag);
+    } else {
+      this.props.selectTag(tag);
+    }
+    
+    this.forceUpdate();
+  }
+
+  applyTagStyle (tag) {
+    let className = 'tag ';
+    if (this.props.checkedTags.includes(tag)) {
+       return className.concat('active');
+    }
+    return className;
   }
 
   render () {
@@ -25,14 +40,16 @@ class FilterByTag extends React.PureComponent {
             return (
               <a onClick={this.getTag}
                  href="javascript:void(0)"
-                 className={"tag"}
+                 ref="tag"
+                 className={this.applyTagStyle(tag)}
                  key={index}
                  data-tag={tag}
                  data-index={index}>{tag}</a>
             );
           })
         }
-        <a href="javascript:void(0)" className="clear" onClick={this.props.clearFilter}>{'x'}</a>
+        <a href="javascript:void(0)" className="clear" 
+           onClick={this.props.clearFilter}>{'x'}</a>
       </div>
     );
   }
