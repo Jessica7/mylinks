@@ -24,7 +24,9 @@ class Header extends React.Component {
         </div>
         <div className="filter">
           <FilterByTag selectTag={this.props.selectTag}
-                       clearFilter={this.props.clearFilter} />
+                       checkedTags={this.props.checkedTags} 
+                       clearFilter={this.props.clearFilter}
+                       clearFilterByOne={this.props.clearFilterByOne} />
         </div>
         <Link to="/cadastrar" className="circle-link">
           <span className="icon-plus">+</span>

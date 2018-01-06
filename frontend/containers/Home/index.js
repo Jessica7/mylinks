@@ -50,7 +50,6 @@ class Home extends React.Component {
     const itemsOfChunks = _.chunk(items, LIST_PERPAGE);
     const pageCount = items.length < LIST_PERPAGE
       ? 1 : this.calculatePageCount(items.length, LIST_PERPAGE);
-
     return (
       <div className="container-list">
         <div className="content-list">

@@ -34,6 +34,12 @@ export function clearFilter() {
   };
 }
 
+export function clearFilterByOne(keyword) {
+  return {
+    type: actions.RESET_ONE_FILTER,
+    keyword
+  };
+}
 
 export function filteringBySearch(term) {
   return {
