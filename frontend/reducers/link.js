@@ -3,27 +3,8 @@ import { createReducer } from 'reducers/createReducer';
 import _ from 'lodash';
 import uuidv4 from 'uuid/v4';
 
-function findIndexById(items, action) {
-  return _.findIndex(items, (item) => item.id == action.id);
-}
-
-function generateItems(limit) {
-  let items = [];
-  for (let i = 0; i <= limit; i++) {
-    const fakeItem = {
-      id: uuidv4(),
-      title: `McDonald’s Sheds Stores ${i}`,
-      url: "http://nyti.ms/2ldCq6V",
-      tags: [`tag${i}`]
-    };
-    items.push(fakeItem);
-  }
-
-  return items;
-}
-
 const initialState = {
-  items: generateItems(12),
+  items: [],
   item: null,
   tags: [],
   searchTerm: '',
@@ -32,7 +13,7 @@ const initialState = {
 
 function deleteLink(state, action) {
   const { items } = state;
-  const index = findIndexById(items, action);
+  const index = _.findIndex(items, (item) => item.id == action.id);
   items.splice(index, 1);
   return {
     ...state,
@@ -41,8 +22,18 @@ function deleteLink(state, action) {
 }
 
 function addLink(state, action) {
-  const items = state.items;
+  const { items } = state;
   items.push(action.item);
+  return {
+    ...state,
+    items
+  };
+}
+
+function editLink(state, action) { 
+  const { items } = state;
+  const index = _.findIndex(items, (i) => i.id == action.item.id);
+  items[index] = action.item;
   return {
     ...state,
     items
@@ -97,12 +88,21 @@ function filterBySearch(state, action) {
   };
 }
 
+function setCurrentLink(state, action) {
+  return {
+    ...state,
+    item: action.item
+  };
+}
+
 export default createReducer(initialState, {
   [ACTIONS.DELETE_LINK]: deleteLink,
   [ACTIONS.ADD_LINK]: addLink,
+  [ACTIONS.EDIT_LINK]: editLink,
   [ACTIONS.FILTER_BY_TAG]: filterTag,
   [ACTIONS.RESET_FILTERS]: filterClear,
   [ACTIONS.RESET_ONE_FILTER]: filterClearByOne,
   [ACTIONS.FILTER_BY_SEARCH]: filterBySearch,
   [ACTIONS.CONCAT_FILTER]: concatFilter,
+  [ACTIONS.SET_CURRENT_LINK]: setCurrentLink
 });

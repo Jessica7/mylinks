@@ -42,10 +42,11 @@ let LinkForm = ({ options, handleSubmit, onSubmit }) => (
       type={'submit'}
       size={'medium'}
       color={'turquoise'}>
-    {'Cadastrar'}
+      {'Cadastrar'}
     </Button>
   </form>
 );
+
 
 const rules = {
   title: ['required'],
@@ -57,7 +58,10 @@ function initFormValues(state) {
   let values = { title: "", url: "", tags: [] };
   const item = state.link.item;
   if (!!item) {
-    values = { ...item };
+    values.title = item.title;
+    values.url = item.url;
+    values.tags = item.tags;
+    values.id = item.id;
   }
   return values;
 }

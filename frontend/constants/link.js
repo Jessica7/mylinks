@@ -1,7 +1,9 @@
 export const DELETE_LINK = 'DELETE_LINK';
 export const ADD_LINK = 'ADD_LINK';
+export const EDIT_LINK = 'EDIT_LINK';
 export const FILTER_BY_TAG = 'FILTER_BY_TAG';
 export const RESET_FILTERS = 'RESET_FILTERS';
 export const RESET_ONE_FILTER = 'RESET_ONE_FILTER';
 export const FILTER_BY_SEARCH = 'FILTER_BY_SEARCH';
 export const CONCAT_FILTER = 'CONCAT_FILTER';
+export const SET_CURRENT_LINK = 'SET_CURRENT_LINK';
