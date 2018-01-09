@@ -23,6 +23,7 @@ class Home extends React.Component {
     this.deleteItem = this.deleteItem.bind(this);
     this.loadData = this.loadData.bind(this);
     this.calculatePageCount = this.calculatePageCount.bind(this);
+    this.setCurrentLink = this.setCurrentLink.bind(this);
   }
 
   componentDidMount() {
@@ -45,18 +46,26 @@ class Home extends React.Component {
     return Math.ceil(items / listPerPage)
   }
 
+  setCurrentLink(id) {
+    const link = this.props.link.items.find(l => l.id == id);
+    this.props.linkAction.setCurrrentLink(link);
+  }
+
   render () {
     const items = this.props.link.items;
     const itemsOfChunks = _.chunk(items, LIST_PERPAGE);
     const pageCount = items.length < LIST_PERPAGE
       ? 1 : this.calculatePageCount(items.length, LIST_PERPAGE);
+  
     return (
       <div className="container-list">
         <div className="content-list">
           {items.length > 0
             ? (
               <div>
-                <List items={itemsOfChunks[this.state.selected]} onClick={this.deleteItem} />
+                <List items={itemsOfChunks[this.state.selected]}
+                      onRemove={this.deleteItem}
+                      onEdit={this.setCurrentLink} />
                 <div className="react-paginate">
                   <ReactPaginate
                       previousLabel={"previous"}

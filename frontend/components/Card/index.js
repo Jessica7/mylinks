@@ -15,6 +15,7 @@ class Card extends React.Component {
     this.props.history.push(this.props.item.url);
   }
   render() {
+    const { onRemove, onEdit } = this.props;
     const { title, url, id } = this.props.item;
     return (
       <div className="card-list">
@@ -35,10 +36,10 @@ class Card extends React.Component {
             <div className="share">
               <Icon type={'fa fa-share-alt share'} size={'small'} color={'turquoise'} />
             </div>
-            <Link to={`editar/${id}`} className="edit">
+            <Link to={`edit/${id}`} onClick={() => onEdit(id)}  className="edit">
               <Icon type={'fa fa-pencil pencil'} size={'small'} color={'turquoise'} />
             </Link>
-            <Link to='#' className="delete" onClick={() => props.onClick(id)} replace>
+            <Link to='#' className="delete" onClick={() => onRemove(id)} replace>
               <Icon type={'fa fa-trash trash'} size={'small'} color={'turquoise'} />
             </Link>
           </div>

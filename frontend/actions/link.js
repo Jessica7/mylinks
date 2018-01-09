@@ -14,6 +14,20 @@ export function addItem(item) {
   };
 }
 
+export function setCurrrentLink(item) {
+  return {
+    type: actions.SET_CURRENT_LINK,
+    item
+  };
+}
+
+export function editItem(item) {
+  return {
+    type: actions.EDIT_LINK,
+    item
+  };
+}
+
 export function concatFilter(filter) {
   return {
     type: actions.CONCAT_FILTER,

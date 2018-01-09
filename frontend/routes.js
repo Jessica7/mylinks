@@ -15,6 +15,7 @@ export const Routes = ({ history, store }) => {
         <App>
           <PrivateRoute history={history} path='/home' store={store} component={Home} />
           <PrivateRoute history={history} path='/cadastrar' store={store} component={Form} />
+          <PrivateRoute history={history} path='/edit/:id' store={store} component={Form} />
         </App>
       </div>
     </Router>
