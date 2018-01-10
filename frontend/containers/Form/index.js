@@ -12,10 +12,8 @@ class Form extends React.Component {
     this.saveLink = this.saveLink.bind(this);
   }
 
-  componentWillMount() {
-    if(!this.props.match.params.id) {
-      this.props.linkAction.setCurrrentLink(null)
-    }
+  componentWillUnmount() {
+    this.props.linkAction.setCurrrentLink(null);
   }
 
   saveLink(values) {
@@ -34,8 +32,10 @@ class Form extends React.Component {
   }
 
   render() {
+    const btnDescription = this.props.match.params.id ? 'Editar' : 'Cadastrar'; 
     return (
-      <LinkForm item={this.props.link.item} onSubmit={this.saveLink} />
+      <LinkForm item={this.props.link.item} onSubmit={this.saveLink}
+                btnDescription={btnDescription} />
     );
   }
 }
