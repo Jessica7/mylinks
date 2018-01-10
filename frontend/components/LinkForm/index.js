@@ -13,7 +13,7 @@ const tags = [
   { value: 'js', label: 'js' }
 ];
 
-let LinkForm = ({ options, handleSubmit, onSubmit }) => (
+let LinkForm = ({ options, handleSubmit, onSubmit, btnDescription }) => (
   <form className="form-link" onSubmit={handleSubmit(onSubmit)}>
     <Field
       type="text"
@@ -42,7 +42,7 @@ let LinkForm = ({ options, handleSubmit, onSubmit }) => (
       type={'submit'}
       size={'medium'}
       color={'turquoise'}>
-      {'Cadastrar'}
+      {btnDescription}
     </Button>
   </form>
 );
