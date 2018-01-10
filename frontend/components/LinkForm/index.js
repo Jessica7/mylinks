@@ -33,11 +33,12 @@ let LinkForm = ({ options, handleSubmit, onSubmit, btnDescription }) => (
     <Field
       type="select"
       name="tags"
+      label={'Tags'}
       component={Select}
       options={options}
       multi={true}
       className="form-input"
-      placeholder="tags" />
+      placeholder={'Select your tag(s)'} />
     <Button
       type={'submit'}
       size={'medium'}
