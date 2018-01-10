@@ -10,7 +10,7 @@ const Select = ({ multi, input, onBlur, options, meta: { error, touched } }) => 
         value={input.value || []}
         options={options}
         onBlur={() => input.onBlur([...input.value])} />
-      {touched && error}
+        <span className="error">{touched && error}</span>
     </div>
   )
 };
