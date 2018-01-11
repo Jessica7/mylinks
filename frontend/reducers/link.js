@@ -64,7 +64,7 @@ function filterTag(state, action) {
 function filterClear(state, action) {
   return {
     ...state,
-    filters: state.filters.filter(filter => filter != 'byTags'),
+    filters: state.filters.filter(filter => filter != action.filter),
     tags: []
   };
 }

@@ -21,12 +21,16 @@ class App extends React.Component {
   }
 
   clearFilter() {
-    this.props.linkAction.clearFilter();
+    this.props.linkAction.clearFilter("byTags");
   }
 
   searchItem(term) {
-    this.props.linkAction.concatFilter("byTerm");
-    this.props.linkAction.filteringBySearch(term.search || "");
+    if(Object.keys(term).length == 0) {
+      this.props.linkAction.clearFilter('byTerm');
+    } else {
+      this.props.linkAction.concatFilter("byTerm");
+      this.props.linkAction.filteringBySearch(term.search || "");
+    }
   }
 
   render() {

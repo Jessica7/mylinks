@@ -42,9 +42,10 @@ export function filteringByTag(tag) {
   };
 }
 
-export function clearFilter() {
+export function clearFilter(filter) {
   return {
     type: actions.RESET_FILTERS,
+    filter
   };
 }
 

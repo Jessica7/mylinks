@@ -56,7 +56,9 @@ class Home extends React.Component {
     const itemsOfChunks = _.chunk(items, LIST_PERPAGE);
     const pageCount = items.length < LIST_PERPAGE
       ? 1 : this.calculatePageCount(items.length, LIST_PERPAGE);
-  
+    const textDefaultView = this.props.link.filters.length && !items.length 
+                            ? 'Not found' : 'No links';
+
     return (
       <div className="container-list">
         <div className="content-list">
@@ -83,8 +85,9 @@ class Home extends React.Component {
                 </div>
               </div>
             ) : <div className="container-default-view">
-                <DefaultView text="Not found :(" color="grey" size="medium" />
-              </div>
+                  {<DefaultView icon={'fa fa-5x fa-folder-o'} text={textDefaultView}
+                                color="grey" size="medium" />}
+                </div>
           }
         </div>
       </div>
