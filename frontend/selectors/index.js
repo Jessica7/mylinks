@@ -17,17 +17,22 @@ export const getLinkState = state => state.link;
  that receives the state and verify if exists the value 
  and can return true or false.
 */
+
+const linkFound = (item, state) => {}
+
 export const applyFilters = createSelector(
   [ getLinkState ],
   state => {
     let found = _.filter(state.items, (item) => {
       const result = state.filters.reduce((acc, cbFilter) => {
-        const predicate = filtersPredicate[cbFilter];
-        if (predicate(item, state)) acc.push(true);
-        else acc.push(false);
+        acc.push(cbFilter);
         return acc;
       }, []);
-      return !result.includes(false);
+      const linkFound = result.map(f => {
+        if (filtersPredicate[f](item, state)) return true;
+        else return false;
+      });
+      return !linkFound.includes(false);
     });
     return {
       ...state,

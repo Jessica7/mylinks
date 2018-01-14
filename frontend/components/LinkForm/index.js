@@ -61,7 +61,7 @@ function initFormValues(state) {
   if (!!item) {
     values.title = item.title;
     values.url = item.url;
-    values.tags = item.tags;
+    values.tags = item.tags.map(t => ({ value: t, label: t }));
     values.id = item.id;
   }
   return values;

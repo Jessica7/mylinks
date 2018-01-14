@@ -17,16 +17,12 @@ class Form extends React.Component {
   }
 
   saveLink(values) {
-    let id = uuidv4();
-    if (values.id) {  
-      this.props.linkAction.editItem(values);
+    const tags = values.tags.map(t => t.value);
+    const newValues = { ...values, tags };
+    if (values.id) {
+      this.props.linkAction.editItem(newValues);
     } else {
-      this.props.linkAction.addItem({
-        id: id,
-        title: values.title,
-        url: values.url,
-        tags: values.tags
-      });
+      this.props.linkAction.addItem({ ...newValues, id: uuidv4() });
     }
     this.props.history.push('/');
   }

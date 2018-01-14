@@ -42,6 +42,13 @@ export function filteringByTag(tag) {
   };
 }
 
+export function clearSearchFilter(term) {
+  return {
+    type: actions.FILTER_BY_SEARCH,
+    term
+  };
+}
+
 export function clearFilter(filter) {
   return {
     type: actions.RESET_FILTERS,

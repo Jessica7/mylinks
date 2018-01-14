@@ -5,7 +5,7 @@ class FilterByTag extends React.PureComponent {
   constructor(props) {
     super(props); 
     this.state = {
-      tags : ['business', 'sport', 'style', 'cusin'],
+      tags : ['business', 'sport', 'style', 'cusin', 'ruby', 'ux'],
     };
 
     this.getTag = this.getTag.bind(this);
@@ -40,7 +40,6 @@ class FilterByTag extends React.PureComponent {
             return (
               <a onClick={this.getTag}
                  href="javascript:void(0)"
-                 ref="tag"
                  className={this.applyTagStyle(tag)}
                  key={index}
                  data-tag={tag}
