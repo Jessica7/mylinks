@@ -17,8 +17,11 @@ class Header extends React.Component {
   }
 
   render() {
+    const visibleHeader = () => {
+      return this.props.currentPathName == true ? 'hide-header' : '';
+    }
     return (
-      <header className="ml-header">
+      <header className={`ml-header ${visibleHeader()}`}>
         <div className="search">
           <Search onChange={_.debounce(this.props.searchItem, 1000)} />
         </div>
