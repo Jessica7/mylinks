@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props, context);
 
     this.selectTag = this.selectTag.bind(this);
-    this.clearFilter = this.clearFilter.bind(this);
+    this.clearFilteringAllTags = this.clearFilteringAllTags.bind(this);
     this.searchItem = this.searchItem.bind(this);
   }
 
@@ -20,13 +20,13 @@ class App extends React.Component {
     this.props.linkAction.filteringByTag(tag);
   }
 
-  clearFilter() {
-    this.props.linkAction.clearFilter("byTags");
+  clearFilteringAllTags() {
+    this.props.linkAction.clearFilterAllTags("byTags");
   }
 
   searchItem(term) {
-    if(Object.keys(term).length == 0) {
-      this.props.linkAction.clearFilter('byTerm');
+    if(term.length == 0) {
+      this.props.linkAction.clearSearchFilter();
     } else {
       this.props.linkAction.concatFilter("byTerm");
       this.props.linkAction.filteringBySearch(term.search || "");
@@ -42,7 +42,7 @@ class App extends React.Component {
           { isLogged
             ? <Header selectTag={this.selectTag}
                       checkedTags={this.props.link.tags}
-                      clearFilter={this.clearFilter}
+                      clearFilteringAllTags={this.clearFilteringAllTags}
                       clearFilterByOne={this.props.linkAction.clearFilterByOne}
                       searchItem={this.searchItem} /> : null }
           <main>

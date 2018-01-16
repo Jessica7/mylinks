@@ -48,7 +48,6 @@ let LinkForm = ({ options, handleSubmit, onSubmit, btnDescription }) => (
   </form>
 );
 
-
 const rules = {
   title: ['required'],
   url: ['required', 'isUrl'],
