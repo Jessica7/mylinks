@@ -42,16 +42,22 @@ export function filteringByTag(tag) {
   };
 }
 
-export function clearFilter(filter) {
+export function clearSearchFilter() {
   return {
-    type: actions.RESET_FILTERS,
+    type: actions.FILTER_BY_SEARCH
+  };
+}
+
+export function clearFilterTags(filter) {
+  return {
+    type: actions.RESET_FILTER_TAG,
     filter
   };
 }
 
 export function clearFilterByOne(keyword) {
   return {
-    type: actions.RESET_ONE_FILTER,
+    type: actions.RESET_FILTER_ONE_TAG,
     keyword
   };
 }

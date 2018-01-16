@@ -40,7 +40,6 @@ class FilterByTag extends React.PureComponent {
             return (
               <a onClick={this.getTag}
                  href="javascript:void(0)"
-                 ref="tag"
                  className={this.applyTagStyle(tag)}
                  key={index}
                  data-tag={tag}

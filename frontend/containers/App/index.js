@@ -21,12 +21,12 @@ class App extends React.Component {
   }
 
   clearFilter() {
-    this.props.linkAction.clearFilter("byTags");
+    this.props.linkAction.clearFilterTags("byTags");
   }
 
   searchItem(term) {
-    if(Object.keys(term).length == 0) {
-      this.props.linkAction.clearFilter('byTerm');
+    if(term.length == 0) {
+      this.props.linkAction.clearSearchFilter();
     } else {
       this.props.linkAction.concatFilter("byTerm");
       this.props.linkAction.filteringBySearch(term.search || "");

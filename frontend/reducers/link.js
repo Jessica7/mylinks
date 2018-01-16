@@ -69,6 +69,14 @@ function filterClear(state, action) {
   };
 }
 
+function clearSearchTerm(state, action) {
+  return {
+    ...state,
+    filters: state.filters.filter(filter => filter != "byTerm"),
+    searchTerm: ''
+  };
+}
+
 function filterClearByOne(state, action) {
   const index = _.findIndex(f => state.tags.includes(action.keyword));
   state.tags.splice(index, 1);
@@ -100,8 +108,9 @@ export default createReducer(initialState, {
   [ACTIONS.ADD_LINK]: addLink,
   [ACTIONS.EDIT_LINK]: editLink,
   [ACTIONS.FILTER_BY_TAG]: filterTag,
-  [ACTIONS.RESET_FILTERS]: filterClear,
-  [ACTIONS.RESET_ONE_FILTER]: filterClearByOne,
+  [ACTIONS.RESET_FILTER_TAG]: filterClear,
+  [ACTIONS.RESET_SEARCH]: clearSearchTerm,
+  [ACTIONS.RESET_FILTER_ONE_TAG]: filterClearByOne,
   [ACTIONS.FILTER_BY_SEARCH]: filterBySearch,
   [ACTIONS.CONCAT_FILTER]: concatFilter,
   [ACTIONS.SET_CURRENT_LINK]: setCurrentLink
