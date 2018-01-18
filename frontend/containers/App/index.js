@@ -34,6 +34,11 @@ class App extends React.Component {
   }
 
   render() {
+    //TODO: improve this logic!
+    const pathname = this.props.location.pathname;
+    const regExUrl = /^\/edit/i.test(pathname);
+    const statusVisibledHeader = (regExUrl == true || pathname == '/cadastrar') 
+                                  ? true : false
     const isLogged = localStorage.getItem('mylinks');
     return (
       <div id="app">
@@ -44,7 +49,8 @@ class App extends React.Component {
                       checkedTags={this.props.link.tags}
                       clearFilteringAllTags={this.clearFilteringAllTags}
                       clearFilterByOne={this.props.linkAction.clearFilterByOne}
-                      searchItem={this.searchItem} /> : null }
+                      searchItem={this.searchItem}
+                      statusVisibledHeader={statusVisibledHeader} /> : null }
           <main>
             {this.props.children}
           </main>
