@@ -25,7 +25,7 @@ class Header extends React.Component {
         <div className="filter">
           <FilterByTag selectTag={this.props.selectTag}
                        checkedTags={this.props.checkedTags} 
-                       clearFilter={this.props.clearFilter}
+                       clearFilteringAllTags={this.props.clearFilteringAllTags}
                        clearFilterByOne={this.props.clearFilterByOne} />
         </div>
         <Link to="/cadastrar" className="circle-link">
