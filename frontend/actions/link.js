@@ -68,3 +68,10 @@ export function filteringBySearch(term) {
     term
   };
 }
+
+export function changeProfileImage(url) {
+  return {
+    type: actions.CHANGE_PROFILE_IMAGE,
+    url
+  };
+}

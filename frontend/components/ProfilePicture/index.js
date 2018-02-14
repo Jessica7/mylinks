@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
-import Icon from '../Icon';
 
 const ProfilePicture = ({ image, name }) => {
   return (
