@@ -13,6 +13,7 @@ class App extends React.Component {
     this.selectTag = this.selectTag.bind(this);
     this.clearFilteringAllTags = this.clearFilteringAllTags.bind(this);
     this.searchItem = this.searchItem.bind(this);
+    this.changeProfileImage = this.changeProfileImage.bind(this);
   }
 
   selectTag(tag) {
@@ -29,8 +30,11 @@ class App extends React.Component {
       this.props.linkAction.clearSearchFilter();
     } else {
       this.props.linkAction.concatFilter("byTerm");
-      this.props.linkAction.filteringBySearch(term.search || "");
     }
+  }
+
+  changeProfileImage(url) {
+    this.props.linkAction.changeProfileImage(url);
   }
 
   render() {
@@ -40,17 +44,19 @@ class App extends React.Component {
     const statusVisibledHeader = (regExUrl == true || pathname == '/cadastrar') 
                                   ? true : false
     const isLogged = localStorage.getItem('mylinks');
+
     return (
       <div id="app">
-        { isLogged ? <Sidebar /> : null }
+        {isLogged ? <Sidebar receiveUrl={this.changeProfileImage} 
+                    imageUrl={this.props.link.url} /> : null}
         <div className="ml-container">
-          { isLogged
+          {isLogged
             ? <Header selectTag={this.selectTag}
                       checkedTags={this.props.link.tags}
                       clearFilteringAllTags={this.clearFilteringAllTags}
                       clearFilterByOne={this.props.linkAction.clearFilterByOne}
                       searchItem={this.searchItem}
-                      statusVisibledHeader={statusVisibledHeader} /> : null }
+                      statusVisibledHeader={statusVisibledHeader} /> : null}
           <main>
             {this.props.children}
           </main>

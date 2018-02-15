@@ -6,6 +6,7 @@ import uuidv4 from 'uuid/v4';
 const initialState = {
   items: [],
   item: null,
+  url: null,
   tags: [],
   searchTerm: '',
   filters: []
@@ -103,6 +104,13 @@ function setCurrentLink(state, action) {
   };
 }
 
+function changeProfileImage(state, action) {
+  return {
+    ...state,
+    url: action.url
+  };
+}
+
 export default createReducer(initialState, {
   [ACTIONS.DELETE_LINK]: deleteLink,
   [ACTIONS.ADD_LINK]: addLink,
@@ -113,5 +121,6 @@ export default createReducer(initialState, {
   [ACTIONS.RESET_FILTER_ONE_TAG]: filterClearByOneTag,
   [ACTIONS.FILTER_BY_SEARCH]: filterBySearch,
   [ACTIONS.CONCAT_FILTER]: concatFilter,
-  [ACTIONS.SET_CURRENT_LINK]: setCurrentLink
+  [ACTIONS.SET_CURRENT_LINK]: setCurrentLink,
+  [ACTIONS.CHANGE_PROFILE_IMAGE]: changeProfileImage
 });
