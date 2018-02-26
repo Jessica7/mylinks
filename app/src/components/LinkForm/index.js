@@ -2,16 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Validate from 'app/helpers/validate';
-import Input from '../Input';
-import Select from '../Select';
-import Button from '../Button';
-
-const tags = [
-  { value: 'ux', label: 'ux' },
-  { value: 'ruby', label: 'ruby' },
-  { value: 'devops', label: 'devops' },
-  { value: 'js', label: 'js' }
-];
+import Input from 'app/components/Input';
+import Select from 'app/components/Select';
+import Button from 'app/components/Button';
+import { tags } from '../../data/data.js';
 
 let LinkForm = ({ options, handleSubmit, onSubmit, btnDescription }) => (
   <form className="form-link" onSubmit={handleSubmit(onSubmit)}>

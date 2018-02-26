@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../Card';
+import Card from 'app/components/Card';
 
 const List = ({ items, onEdit, onRemove }) => {
   return (

@@ -1,3 +1,4 @@
+/*eslint no-useless-escape: "off"*/
 import _ from 'lodash';
 
 export const isEmpty = (str) => {
@@ -25,7 +26,7 @@ class Validate {
   }
 
   initialize() {
-    this.fieldKeys.map(key => {
+    this.fieldKeys.forEach((key)=> {
       const rules = this.rules[key];
       this.getRuleAndField(key, rules);
     });
@@ -33,7 +34,7 @@ class Validate {
   }
 
   getRuleAndField (key, rules) {
-    _.keys(rules).map((rule) => {
+    _.keys(rules).forEach((rule) => {
       const fieldRule = this.rules[key][rule];
       const fieldValue = this.fields[key];
       const validator = this[fieldRule];

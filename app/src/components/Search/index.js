@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import Input from '../Input';
+import Input from 'app/components/Input';
 
 let Search = ({ handleSubmit, onChange }) => (
   <form className="search-form" onChange={handleSubmit(onChange)}>

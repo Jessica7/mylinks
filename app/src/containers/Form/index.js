@@ -17,7 +17,7 @@ class Form extends React.Component {
   }
 
   saveLink(values) {
-    const tags = values.tags.map(t => t.value);
+    const tags = values.tags.map(t => t);
     const newValues = { ...values, tags };
     if (values.id) {
       this.props.linkAction.editItem(newValues);

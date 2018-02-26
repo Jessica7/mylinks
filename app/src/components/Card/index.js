@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../Icon';
+import Icon from 'app/components/Icon';
 
 const iconLink = require('../../assets/images/icon-link.png');
 const iconRedirect = require('../../assets/images/arrow-redirect.png');
@@ -20,12 +20,12 @@ class Card extends React.Component {
     return (
       <div className="card-list">
         <div className="content">
-          <img className="icon" src={iconLink} width="50" height="50" alt="" />
+          <img className="icon" src={iconLink} width="50" height="50" alt="card image" />
           <div className="description">
             <span className="title">{title}</span>
             <span className="url">
               <Link to={this.props.item.url} onClick={this.redirectUrl} target="_blank">
-                <img src={iconRedirect} alt="" />
+                <img src={iconRedirect} alt="card image" />
               </Link>
             </span>
           </div>

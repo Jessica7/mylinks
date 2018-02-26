@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Image = ({ src, size, type }) => {
+const Image = ({ src, size, type, alt }) => {
   const imageClasses = classNames(`image -${type} -${size}`);
   return (
-    <img src={src} className={imageClasses} alt="" />
+    <img src={src} className={imageClasses} alt={alt} />
   );
 };
 

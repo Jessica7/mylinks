@@ -42,9 +42,9 @@ export function filteringByTag(tag) {
   };
 }
 
-export function clearSearchFilter() {
+export function clearSearchTerm() {
   return {
-    type: actions.FILTER_BY_SEARCH
+    type: actions.RESET_SEARCH
   };
 }
 

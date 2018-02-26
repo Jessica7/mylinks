@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Search from '../Search';
-import FilterByTag from '../FilterByTag';
-import Icon from '../Icon';
+import Search from 'app/components/Search';
+import FilterByTag from 'app/components/FilterByTag';
+import Icon from 'app/components/Icon';
 import _ from 'lodash';
 
 class Header extends React.Component {

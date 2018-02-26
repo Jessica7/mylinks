@@ -26,10 +26,11 @@ class App extends React.Component {
   }
 
   searchItem(term) {
-    if(term.length === 0) {
-      this.props.linkAction.clearSearchFilter();
+    if(Object.keys(term).length === 0) {
+      this.props.linkAction.clearSearchTerm();
     } else {
       this.props.linkAction.concatFilter("byTerm");
+      this.props.linkAction.filteringBySearch(term);
     }
   }
 

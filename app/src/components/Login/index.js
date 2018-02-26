@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Validate from 'app/helpers/validate';
-import Input from '../Input';
-import Button from '../Button';
+import Input from 'app/components/Input';
+import Button from 'app/components/Button';
 
 let Login = ({ handleSubmit, onSubmit }) => (
   <form className="form-login" onSubmit={handleSubmit(onSubmit)}>

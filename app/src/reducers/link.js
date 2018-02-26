@@ -2,8 +2,10 @@ import * as ACTIONS from 'app/constants/link';
 import { createReducer } from './createReducer';
 import _ from 'lodash';
 
+import { data } from '../data/data.js';
+
 const initialState = {
-  items: [],
+  items: data,
   item: null,
   url: null,
   tags: [],
@@ -72,7 +74,7 @@ function filterClearAllTags(state, action) {
 function clearSearchTerm(state, action) {
   return {
     ...state,
-    filters: state.filters.filter(filter => filter !== "byTerm"),
+    filters: state.filters.filter(filter => filter !== 'byTerm'),
     searchTerm: ''
   };
 }
@@ -92,7 +94,7 @@ function filterClearByOneTag(state, action) {
 function filterBySearch(state, action) {
   return {
     ...state,
-    searchTerm: action.term
+    searchTerm: action.term.search
   };
 }
 
@@ -121,5 +123,5 @@ export default createReducer(initialState, {
   [ACTIONS.FILTER_BY_SEARCH]: filterBySearch,
   [ACTIONS.CONCAT_FILTER]: concatFilter,
   [ACTIONS.SET_CURRENT_LINK]: setCurrentLink,
-  [ACTIONS.CHANGE_PROFILE_IMAGE]: changeProfileImage
+  [ACTIONS.CHANGE_PROFILE_IMAGE]: changeProfileImage,
 });

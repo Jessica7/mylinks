@@ -4,18 +4,16 @@ import Icon from '../Icon';
 class FileUpload extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      reader: null
-    };
-
+    this.reader = null;
+    
     this.fileReader = this.fileReader.bind(this);
     this.getImage = this.getImage.bind(this);
     this.onLoadend = this.onLoadend.bind(this);
   }
 
   fileReader(files) {
-    this.state.reader = new FileReader();
-    this.state.reader.readAsDataURL(files);
+    this.reader = new FileReader();
+    this.reader.readAsDataURL(files);
     this.onLoadend();
   }
 
@@ -24,16 +22,14 @@ class FileUpload extends React.Component {
   }
 
   onLoadend() {
-    this.state.reader.onloadend = event => {
+    this.reader.onloadend = event => {
       this.props.receiveUrl(event.target.result);
     };
-
-    //this.setState({ reader: this.state.reader });
   }
 
   render() {
     return (
-      <div className="wrapper-select">
+      <div className="wrapper-select-image">
         <label htmlFor='select-file'>
           <Icon type={'fas fa-camera'} size={'small'} color={'white'} />
         </label>

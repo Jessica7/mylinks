@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Menu from '../Menu';
-import ProfilePicture from '../ProfilePicture';
-import FileUpload from '../FileUpload';
+import Menu from 'app/components/Menu';
+import ProfilePicture from 'app/components/ProfilePicture';
+import FileUpload from 'app/components/FileUpload';
+
+import imageDefault from '../../assets/images/image-profile-default.png';
 
 const Sidebar = ({ receiveUrl, imageUrl }) => {
   return (
@@ -13,7 +15,7 @@ const Sidebar = ({ receiveUrl, imageUrl }) => {
       <div className="wrapper-fileupload">
         <FileUpload receiveUrl={receiveUrl} />
       </div>
-      <ProfilePicture image={imageUrl} name={'John'} />
+      <ProfilePicture image={imageUrl || imageDefault} name={'John'} />
       <Menu />
     </div>
   );

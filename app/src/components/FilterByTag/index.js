@@ -4,7 +4,7 @@ class FilterByTag extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      tags : ['business', 'sport', 'ruby', 'css', 'ux'],
+      tags : ['business', 'sport', 'technology', 'lifeStyle'],
     };
 
     this.getTag = this.getTag.bind(this);
