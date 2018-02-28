@@ -3,3 +3,14 @@
 ## MyLinks
 
 MyLinks is a Links Manager simple and easy.
+
+## Stack:
+
+- [x] React
+- [x] Redux
+- [x] Webpack
+- [x] ES6
+- [x] Jest and Enzyme
+
+![alt text](app/src/assets/images/layout.png)
+
