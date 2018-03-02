@@ -1,12 +1,12 @@
 import React from 'react';
 import Card from 'app/components/Card';
 
-const List = ({ items, onEdit, onRemove }) => {
+const List = ({ items, history, onEdit, onRemove }) => {
   return (
     <div className="list">
       {
         items.map((item, index) =>
-          <Card item={item} key={index} onRemove={onRemove} onEdit={onEdit} />)
+          <Card item={item} history={history} key={index} onRemove={onRemove} onEdit={onEdit} />)
       }
     </div>
   );

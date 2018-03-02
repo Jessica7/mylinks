@@ -66,6 +66,7 @@ class Home extends React.Component {
             ? (
               <div>
                 <List items={itemsOfChunks[this.state.selected]}
+                      history={this.props.history} 
                       onRemove={this.deleteItem}
                       onEdit={this.setCurrentLink} />
                 <div className="react-paginate">

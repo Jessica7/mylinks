@@ -12,7 +12,7 @@ class Card extends React.Component {
   }
 
   redirectUrl() {
-    this.props.history.push(this.props.item.url);
+    this.props.history.go(this.props.item.url);
   }
   render() {
     const { onRemove, onEdit } = this.props;
