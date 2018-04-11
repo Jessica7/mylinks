@@ -35,7 +35,7 @@ let LinkForm = ({ options, handleSubmit, onSubmit, btnDescription }) => (
       placeholder={'Select your tag(s)'} />
     <Button
       type={'submit'}
-      size={'medium'}
+      size={'small'}
       color={'turquoise'}>
       {btnDescription}
     </Button>

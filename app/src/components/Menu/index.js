@@ -4,7 +4,7 @@ import Icon from 'app/components/Icon';
 
 const Menu = () => {
   return (
-    <ul className="sidebar-menu">
+    <ul className="menu-sidebar">
       <li>
         <Link className="menu-link" to="/home">
           <Icon type={'fa fa-home'} size={'small'} color={'white'} />

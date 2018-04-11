@@ -29,7 +29,7 @@ class FileUpload extends React.Component {
 
   render() {
     return (
-      <div className="wrapper-select-image">
+      <div className="wrapper-upload">
         <label htmlFor='select-file'>
           <Icon type={'fas fa-camera'} size={'small'} color={'white'} />
         </label>
@@ -39,7 +39,7 @@ class FileUpload extends React.Component {
           type="file"
           onChange={this.getImage}
           multiple="multiple"
-          className="input-upload"
+          className="file-upload"
           accept="image/jpeg, image/png, image/jpg" />
       </div>
     );

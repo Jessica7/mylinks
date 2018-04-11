@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 const Button = ({ onClick, type, size, color, children }) => {
-  const buttonClasses = classNames(`button -${color} -${size}`);
+  const buttonClasses = classNames(`button-general -${color} -${size}`);
   return (
     <button
       className={buttonClasses}

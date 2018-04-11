@@ -1,11 +1,11 @@
 import React from 'react';
+import Label from 'app/components/Label';
 
 const Input = ({
   input, type, label, placeholder, className, name, meta: { error, touched }
 }) => {
   return (
     <div className="wrapper-input">
-      {label ? <label htmlFor={input.name}>{label}</label> : null}
       <input type={type} id={input.name}
              className={className}
              placeholder={placeholder}

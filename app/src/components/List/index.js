@@ -3,7 +3,7 @@ import Card from 'app/components/Card';
 
 const List = ({ items, history, onEdit, onRemove }) => {
   return (
-    <div className="list">
+    <div className="list-card">
       {
         items.map((item, index) =>
           <Card item={item} history={history} key={index} onRemove={onRemove} onEdit={onEdit} />)

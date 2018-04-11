@@ -35,7 +35,7 @@ class UserLogin extends React.Component {
 
   render () {
     return (
-      <div className="center">
+      <div className="login-wrapper">
         <Login onSubmit={this.makeLogin} />
       </div>
     );

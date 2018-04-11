@@ -18,7 +18,7 @@ class Card extends React.Component {
     const { onRemove, onEdit } = this.props;
     const { title, id } = this.props.item;
     return (
-      <div className="card-list">
+      <div className="card-link">
         <div className="content">
           <img className="icon" src={iconLink} width="50" height="50" alt="card image" />
           <div className="description">

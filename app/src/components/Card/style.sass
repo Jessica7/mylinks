@@ -12,24 +12,19 @@
   border-radius: 50%
   text-decoration: none
 
-.card-list
+.card-link
   display: inline-flex
   position: relative
   padding: 1rem
   margin: .4rem
   width: 24rem
-  height: 22rem
+  height: 24rem
   text-align: center
-  font-family: 'Catamaran Regular', sans-serif
+  font-family: $font-primary
   color: $color-secondary
   background: $color-third
   border-radius: 1rem
-  box-shadow: 0rem 0.3rem 1.2rem #dddddd
-
-  > .category
-    width: 8rem
-    height: 9.8rem
-    background: #f8f8f8
+  box-shadow: 0rem 0.3rem 1.2rem $shadow
 
   > .content
     width: 30rem
@@ -50,7 +45,7 @@
             display: inline-block
             margin: 1rem 0
             width: 20rem
-            font-size: 1.6rem
+            font-size: $font-medium
             font-weight: bold
             color: $color-secondary
             overflow: hidden
