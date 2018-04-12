@@ -1,13 +1,15 @@
 import React from 'react';
-import Label from 'app/components/Label';
+import classNames from 'classnames';
 
 const Input = ({
-  input, type, label, placeholder, className, name, meta: { error, touched }
+  input, type, size, label, placeholder, className, name, meta: { error, touched }
 }) => {
+  const inputClasses = classNames(`input-form -${size}`);
   return (
     <div className="wrapper-input">
-      <input type={type} id={input.name}
-             className={className}
+      <input type={type} 
+             id={input.name}
+             className={inputClasses}
              placeholder={placeholder}
              {...input} />
       <span className="error">{touched && error}</span>

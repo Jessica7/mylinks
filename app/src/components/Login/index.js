@@ -9,18 +9,20 @@ let Login = ({ handleSubmit, onSubmit }) => (
   <form className="form-login" onSubmit={handleSubmit(onSubmit)}>
     <Field
       type="text"
+      size="medium"
       name="email"
       label="email"
       component={Input}
-      className="form-input"
+      className="input-form"
       placeholder="email"
       data-required />
     <Field
       type="password"
+      size="medium"
       name="password"
       label="password"
       component={Input}
-      className="form-input"
+      className="input-form"
       placeholder="password" />
     <Button
       type={'submit'}

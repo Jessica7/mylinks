@@ -11,27 +11,30 @@ let LinkForm = ({ options, handleSubmit, onSubmit, btnDescription }) => (
   <form className="form-link" onSubmit={handleSubmit(onSubmit)}>
     <Field
       type="text"
+      size="medium"
       name="title"
       label="Title"
       component={Input}
-      className="form-input"
+      className="input-form"
       placeholder="title"
       data-required />
     <Field
       type="text"
+      size="medium"
       name="url"
       label="Url"
       component={Input}
-      className="form-input"
+      className="input-form"
       placeholder="url" />
     <Field
       type="select"
+      size="medium"
       name="tags"
       label={'Tags'}
       component={Select}
       options={options}
       multi={true}
-      className="form-input"
+      className="input-form"
       placeholder={'Select your tag(s)'} />
     <Button
       type={'submit'}

@@ -1,7 +1,35 @@
 .wrapper-input
-  
+
+  > .input-form
+      color: $color-grey
+      border: none
+      border-bottom: solid 1px $color-fourth
+      margin-bottom: 2rem
+      @include placeholder()
+
+      &:focus
+        outline: none
+
+      &.-small
+        width: 20rem
+        padding: .8rem
+
+      &.-medium
+        width: 30rem
+        padding: 1rem
+
+        @media(max-width: 375px)
+          width: 26rem
+
+      &.-large
+        width: 34rem
+        padding: 1.2rem
+
+      @media(max-width: 375px)
+        margin-bottom: 0rem 
+
   > .error
-     margin-bottom: 3rem
-     display: inline-block
-     font-size: $font-tiny
-     color: $msg-error-form
+      margin-bottom: 3rem
+      display: inline-block
+      font-size: $font-tiny
+      color: $msg-error-form
