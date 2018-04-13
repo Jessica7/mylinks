@@ -8,11 +8,11 @@ let Search = ({ handleSubmit, onChange }) => (
     <div className="wrapper-search">
       <Field
         type="text"
-        name="search"
+        size="large"
         component={Input}
-        className="input-search"
+        className="input-form"
         placeholder="search" />
-      </div>
+    </div>
   </form>
 );
 

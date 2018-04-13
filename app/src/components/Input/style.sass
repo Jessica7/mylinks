@@ -18,15 +18,30 @@
         width: 30rem
         padding: 1rem
 
-        @media(max-width: 375px)
-          width: 26rem
-
       &.-large
         width: 34rem
         padding: 1.2rem
 
+      &.-search
+        padding: 1.2rem 2rem 1.2rem 4rem
+        border: none
+        border: solid 1px $color-fourth
+        border-radius: 4rem
+        color: $color-secondary
+        background-image: url('../assets/images/icon-search.png')
+        background-position: .6rem .5rem
+        background-repeat: no-repeat
+        @include crossBrowser(transition, width 0.4s)
+
+        &:focus
+          outline: none
+          width: 44rem
+          border: solid 1px $color-primary
+
+
       @media(max-width: 375px)
-        margin-bottom: 0rem 
+        width: 26rem
+        margin-bottom: 0rem
 
   > .error
       margin-bottom: 3rem

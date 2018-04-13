@@ -4,7 +4,7 @@ import classNames from 'classnames';
 const Input = ({
   input, type, size, label, placeholder, className, name, meta: { error, touched }
 }) => {
-  const inputClasses = classNames(`input-form -${size}`);
+  const inputClasses = classNames(`input-form -${size} -${type}`);
   return (
     <div className="wrapper-input">
       <input type={type} 
