@@ -24,7 +24,7 @@ Also, you can use this Project as you wish, be for study, be for make improvemen
 
 ### Prerequisites
 
-To run this project in the development mode, you'll need to have a basic environment to run a React Native, that can be found [here](https://create-react-app.dev/docs/getting-started/).
+To run this project in the development mode, you'll need to have a basic environment to run a React, that can be found [here](https://create-react-app.dev/docs/getting-started/).
 
 
 ### Installing
@@ -73,7 +73,7 @@ $ npm start
 
 You can send how many PR's do you want, I'll be glad to analyse and accept them! And if you have any question about the project...
 
-Email-me: stenio.wagner1@gmail.com
+Email-me: jessica.nascimento6@gmail.com
 
 Thank you! 👍
 
