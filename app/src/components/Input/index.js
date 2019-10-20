@@ -5,7 +5,6 @@ const Input = ({
 }) => {
   return (
     <div className="wrapper-input">
-      {label ? <label htmlFor={input.name}>{label}</label> : null}
       <input type={type} id={input.name}
              className={className}
              placeholder={placeholder}
