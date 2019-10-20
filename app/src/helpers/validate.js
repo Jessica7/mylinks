@@ -11,7 +11,8 @@ export const isUrl = (str) =>  {
 }
 
 const messagesValidate = {
-  required: 'Please, write',
+  requiredEmail: 'Please enter your email',
+  requiredPass: 'Please enter your password',
   isUrl: 'Invalid Url',
   hasItems: 'Please, select the tags'
 };
@@ -50,8 +51,12 @@ class Validate {
     return this.errors;
   }
 
-  required(str) {
-    return isEmpty(str) === false ? null : messagesValidate.required;
+  requiredEmail(str) {
+    return isEmpty(str) === false ? null : messagesValidate.requiredEmail;
+  }
+
+  requiredPassword(str) {
+    return isEmpty(str) === false ? null : messagesValidate.requiredPass;
   }
 
   isUrl(str) {
