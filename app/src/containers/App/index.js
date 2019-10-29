@@ -7,8 +7,8 @@ import Sidebar from 'app/components/Sidebar';
 import Header from 'app/components/Header';
 
 class App extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.selectTag = this.selectTag.bind(this);
     this.clearFilteringAllTags = this.clearFilteringAllTags.bind(this);
@@ -17,8 +17,9 @@ class App extends React.Component {
   }
 
   selectTag(tag) {
-    this.props.linkAction.concatFilter("byTags");
-    this.props.linkAction.filteringByTag(tag);
+    const { linkAction } = this.props
+    linkAction.concatFilter("byTags");
+    linkAction.filteringByTag(tag);
   }
 
   clearFilteringAllTags() {
@@ -26,11 +27,12 @@ class App extends React.Component {
   }
 
   searchItem(term) {
+    const { linkAction} = this.props
     if(Object.keys(term).length === 0) {
-      this.props.linkAction.clearSearchTerm();
+      linkAction.clearSearchTerm();
     } else {
-      this.props.linkAction.concatFilter("byTerm");
-      this.props.linkAction.filteringBySearch(term);
+      linkAction.concatFilter("byTerm");
+      linkAction.filteringBySearch(term);
     }
   }
 
@@ -38,12 +40,17 @@ class App extends React.Component {
     this.props.linkAction.changeProfileImage(url);
   }
 
-  render() {
-    //TODO: improve this logic!
+  getStatusHeader = () => {
     const pathname = this.props.location.pathname;
     const regExUrl = /^\/edit/i.test(pathname);
-    const statusVisibledHeader = (regExUrl === true || pathname === '/cadastrar')
-                                  ? true : false
+    const statusVisibledHeader = (!!regExUrl || pathname === '/cadastrar')
+                                  ? true : false;
+    return statusVisibledHeader;
+  }
+
+  render() {
+    //TODO: improve this logic!
+    
     const isLogged = localStorage.getItem('mylinks');
 
     return (
@@ -57,7 +64,7 @@ class App extends React.Component {
                       clearFilteringAllTags={this.clearFilteringAllTags}
                       clearFilterByOne={this.props.linkAction.clearFilterByOne}
                       searchItem={this.searchItem}
-                      statusVisibledHeader={statusVisibledHeader} /> : null}
+                      statusVisibledHeader={this.getStatusHeader()} /> : null}
           <main>
             {this.props.children}
           </main>
