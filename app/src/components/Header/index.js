@@ -16,13 +16,14 @@ class Header extends React.Component {
     this.props.authAction.logoutUser();
     this.props.history.push('/');
   }
+  
+  visibleHeader = () => {
+    return this.props.currentPathName === true ? 'hide-header' : '';
+  }
 
   render() {
-    const visibleHeader = () => {
-      return this.props.currentPathName === true ? 'hide-header' : '';
-    }
     return (
-      <header className={`ml-header ${visibleHeader()}`}>
+      <header className={`ml-header ${this.visibleHeader()}`}>
         <div className="search">
           <Search onChange={_.debounce(this.props.searchItem, 1000)} />
         </div>
