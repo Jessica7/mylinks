@@ -44,7 +44,7 @@
     "whatwg-fetch": "2.0.3",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "react-paginate": "^5.0.0",
     "react-redux": "^5.0.5",
     "react-router": "4.2.0",
