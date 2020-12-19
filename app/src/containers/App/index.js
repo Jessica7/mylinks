@@ -49,8 +49,8 @@ class App extends React.Component {
     return (
       <div id="app">
         {isLogged ? <Sidebar receiveUrl={this.changeProfileImage}
-                    imageUrl={this.props.link.url} /> : null}
-        <div className="ml-container">
+                  imageUrl={this.props.link.url} /> : null}
+        <div className="content-wrapper">
           {isLogged
             ? <Header selectTag={this.selectTag}
                       checkedTags={this.props.link.tags}
@@ -61,7 +61,7 @@ class App extends React.Component {
           <main>
             {this.props.children}
           </main>
-        </div>
+        </div> 
       </div>
     );
   }

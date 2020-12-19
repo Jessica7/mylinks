@@ -22,7 +22,7 @@ class Header extends React.Component {
       return this.props.currentPathName === true ? 'hide-header' : '';
     }
     return (
-      <header className={`ml-header ${visibleHeader()}`}>
+      <header className={`header ${visibleHeader()}`}>
         <div className="search">
           <Search onChange={_.debounce(this.props.searchItem, 1000)} />
         </div>

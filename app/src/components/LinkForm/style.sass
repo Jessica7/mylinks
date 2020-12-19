@@ -3,35 +3,10 @@
   width: 40rem
   height: 100vh
 
-  > .wrapper-button
-      display: inline-flex
-      margin-top: 2rem
-
-  > .back
-      margin-left: 1rem
-      font-family: 'Catamaran Regular', sans-serif
-      font-size: 1.2rem
-      color: $color-primary
-
-
 .input-label,
 .select-label
   display: block
   margin-top: 1rem
-  font-family: 'Catamaran Regular', sans-serif
-  font-size: 1.6rem
+  font-family: $font-primary
+  font-size: $font-medium
   color: $color-primary
-
-.form-input
-  margin-bottom: 2rem
-  padding: .8rem
-  width: 32rem
-  border: none
-  border-bottom: solid 1px $color-fourth
-  color: $color-secondary
-
-  @include placeholder()
-    color: $color-placeholder
-
-  &:focus
-    outline: none
